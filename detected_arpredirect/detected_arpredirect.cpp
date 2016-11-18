@@ -10,7 +10,7 @@ int main(int argc,char* argv[])
 {
 	FILE* fp=popen("arp -a | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'","r");
 	list<string> macAddr;
-	list<string>::iterator iter;
+	list<string>::iterator macAddrIter;
 	char tmpMac[18];
 	int before,after;
 
@@ -22,8 +22,8 @@ int main(int argc,char* argv[])
 		pclose(fp);
 	
 	macAddr.remove("\n");
-	for(iter=macAddr.begin(); iter != macAddr.end(); iter++)
-		cout<<*iter<<endl;
+	for(macAddrIter=macAddr.begin(); macAddrIter != macAddr.end(); macAddrIter++)
+		cout<<*macAddrIter<<endl;
 	before=macAddr.size();
 	macAddr.sort();
 	macAddr.unique();
